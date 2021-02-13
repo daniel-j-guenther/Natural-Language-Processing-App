@@ -2,6 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     entry: './src/client/index.js',
@@ -23,8 +25,8 @@ module.exports = {
                 }
             },    
             {
-                test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                test: /\.s?css$/,
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
@@ -33,6 +35,8 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
+        new MiniCssExtractPlugin(),
+        new BundleAnalyzerPlugin(),
         new CleanWebpackPlugin({
             // Simulate the removal of files
             dry: true,

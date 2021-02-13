@@ -8,7 +8,6 @@ Technologies I will be implimenting into this project include:
 - HTML, CSS & JavaScript ([SASS](https://sass-lang.com/) & [ES6](http://es6-features.org/))
 - [Node.js](https://nodejs.org/) (Express, JSON npm, etc.)
 - [Webpack](https://webpack.js.org/) (Production & Development Enviroments)
-- [Aylien API](https://aylien.com/) (simplifies our node/express backend/requests)
 - [MeaningCloud Sentiment Analysis API](https://www.meaningcloud.com/developer/sentiment-analysis) (for our Natural Language Processing)
 - [Workbox](https://developers.google.com/web/tools/workbox) (Service Workers for Precaching & Runtime caching)
 
