@@ -44,3 +44,17 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 - p4-frontend-dev-nanodegree/webpack.prod.js
 - p4-frontend-dev-nanodegree/LICENSE
 - p4-frontend-dev-nanodegree/README
+
+## Install Notes
+
+> npm install
+
+> npm i -D @babel/core @babel/preset-env babel-loader
+> npm i -D style-loader node-sass css-loader sass-loader
+> npm i -D clean-webpack-plugin
+> npm i -D html-webpack-plugin@4
+> npm i -D mini-css-extract-plugin
+> npm i -D optimize-css-assets-webpack-plugin
+> npm i -D terser-webpack-plugin@4
+> npm i -D install --save-dev webpack-bundle-analyzer
+> npm i -D install file-loader@4
