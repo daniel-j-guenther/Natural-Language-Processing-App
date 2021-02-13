@@ -14,6 +14,17 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: '/\.(png|ico|ttf|webmanifest)$/i',
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]'
+                }
+            },    
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
     },

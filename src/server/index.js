@@ -1,19 +1,37 @@
+/* AmazingAI - App Endpoint */
+projectData = {};
+
+/* AmazingAI - Dependencies */
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 
+/* AmazingAI - App instance */
 const app = express()
 
+/* AmazingAI - Middleware */
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+/* AmazingAI - Cross origin allowance */
+const cors = require('cors');
+app.use(cors());  
+
+/* AmazingAI - App instance */
 app.use(express.static('dist'))
 
-console.log(__dirname)
+
+/* AmazingAI - Asynchronouse GET/POST routes */
+
+// console.log(__dirname)
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
     res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
-// designates what port the app will listen to for incoming requests
+/* AmazingAI - Localhost */
 app.listen(3072, function () {
     console.log('AmazingCodebase listening on port 3072!')
 })
