@@ -47,6 +47,7 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 
 ## Install Notes
 
+> npm i -g chokidar@latest fsevents@latest
 > npm install
 
 > npm i webpack-cli
