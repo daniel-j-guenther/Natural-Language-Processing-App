@@ -21,7 +21,7 @@
         <header class="header-amazing">
             <div class="container">
                 <nav class="navbar-amazing">
-                    <h1 class="h1-amazing">The <a href="index.html" aria-current="page"><strong class="highlight">AmazingAI</strong></a> Web Application</h1>
+                    <h1 class="h1-amazing">The <a href="index.html" aria-current="page"><strong class="highlight">AmazingAI</strong></a> App</h1>
                 </nav>
             </div>
         </header>
@@ -29,25 +29,20 @@
         <main>
             <div class="container">
                 <div class="div-master">
-                    <div class="app">
-                       <!-- User Inputs -->
+                    
+                    <form class="app" onsubmit="return Client.handleSubmit(event)">
+                        
+                        <!-- User Inputs -->
                         <h2 class="h2-amazing">Get <strong>AmazingAI</strong> Feedback</h2>
-                        <form class="" onsubmit="return Client.handleSubmit(event)">
-                            <input class="amazing-zip" type="text" id="zip" placeholder="enter zip code here">
-                            <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter a web address here for our robots to process...">
-                            <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                            <button class="amazing-btn" id="generate" type="submit"> Generate </button>
-                        </form>
+                        <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter a web address here for our robots to process...">
+                        <input type="submit" class="amazing-btn" name="" value="Get AI Feedback" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                        
                         <!-- NLP Outputs -->
-                        <h2 class="h2-amazing">Updated <strong>AmazingAI</strong> Results:</h2>
-                        <div id="app-journals" class="entry-amazing">
-                            <div id="entryHolder">
-                                <div id="date"></div> 
-                                <div id="temp"></div>
-                                <div id="results"></div>
-                            </div>
-                        </div>
-                    </div>
+                        <h2 class="h2-amazing">Your <strong>AmazingAI</strong> Results:</h2>
+                        <div id="app-feedback" class="entry-amazing"></div>
+
+                    </form>
+
                 </div>
             </div>
         </main>

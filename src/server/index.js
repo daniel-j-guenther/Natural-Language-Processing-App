@@ -10,7 +10,9 @@ const app = express()
 app.use(express.static('dist'))
 
 /* AmazingAI - Localhost */
-app.listen(3072, ()=>{console.log('AmazingAI on port 3072!')})
+app.listen(1024, function () {
+    console.log('AmazingAI on port 1024!')
+})
 
 /* AmazingAI - Asynchronouse GET/POST routes */
 console.log(__dirname)

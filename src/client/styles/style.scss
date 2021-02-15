@@ -12,19 +12,6 @@ $padding-lm: 72px;
 $padding-ll: 144px;
 
 /* AmazingAI - Base Styling */
-.container {
-    position: relative;
-    z-index: 1;
-    width: 860px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 12px;
-    padding-left: 12px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 header {  
     z-index: 0;
     display: flex;
@@ -38,16 +25,6 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        
-        .highlight {
-            padding-right: 6px;
-            padding-left: 6px;
-            background-color: $accent-pri;
-            color: #fff;
-            &:hover {
-                background-color: $accent-alt;
-            }
-        }
     }
 }
 
@@ -66,7 +43,7 @@ main {
         width: 100%;
         margin-top: -32px;
         margin-bottom: -32px;
-        border-radius: $padding-ss;
+        border-radius: 12;
         background-color: #fff;
         box-shadow: 4px 4px 12px 1px rgba(0, 0, 0, 0.15);
     }
@@ -110,7 +87,7 @@ footer {
         text-decoration: none;
     }
     
-    .social-icon {
+    .social-icon{
         display: inline-block;
         width: $padding-lm;
         padding-top: $padding-ss;
@@ -123,149 +100,143 @@ footer {
     }
 }
 
+.container{
+    position: relative;
+    z-index: 1;
+    width: 860px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 12px;
+    padding-left: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* AmazingAI - Component Styling */
 .app{
     display: flex;
     flex-direction: column;
     vertical-align: top;
     justify-content: center;
-    padding-top: $padding-sm;
+    padding-top: $padding-mm;
+    padding-bottom: $padding-mm;
     padding-left: $padding-ll;
     padding-right: $padding-ll;
-    padding-bottom: $padding-ls;
+}
+
+input{
+    display:block;
+    height: 48px;
+    padding: $padding-ss;
+    margin-bottom: $padding-ss;
+    color: $accent-alt;
+    background-color: #e6e6e6;
+    border-width: 1px;
+    border-radius: 6px;
+    font-size: 1em;
     font-family: $font-user;
+    
+    &::placeholder{ /* Firefox, Chrome, Opera */ 
+        color: $accent-alt;
+    } 
+    
+    &:-ms-input-placeholder{ /* Internet Explorer 10-11 */ 
+        color: $accent-alt;
+    } 
+    
+    &::-ms-input-placeholder{ /* Microsoft Edge */ 
+        color: $accent-alt;
+    } 
+    
+    &:focus{
+        outline: none;
+    }
+}        
 
-    form {
-        padding: $padding-ss;
+.amazing-btn{
+    display: block;
+    height: 48px;
+    background: $accent-alt;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1.44em;
+    font-family: $font-user;
+    &:focus {
+        outline: none;
+    }
+}
 
-        input{
-            display:block;
-            height: 48px;
-            margin-bottom: $padding-ss;
-            color: $accent-alt;
-            background-color: #e6e6e6;
-            border-width: 1px;
-            border-radius: 6px;
-            font-size: 1em;
-            font-family: $font-user;
-            &::placeholder { /* Firefox, Chrome, Opera */ 
-                color: $accent-alt;
-                font-size: 1em;
-                font-family: 'Exo';
-            } 
-            &:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-                color: $accent-alt; 
-                font-size: 1em;
-                font-family: 'Exo';
-            } 
-            &::-ms-input-placeholder { /* Microsoft Edge */ 
-                color: $accent-alt;
-                font-size: 1em;
-                font-family: 'Exo';
-            } 
-            &:focus{
-                outline: none;
-            }
-        }        
-        
-        button{
-            display: block;
-            height: 48px;
-            background: $accent-alt;
-            color: #fff;
-            border-radius: 6px;
-            font-size: 1.44em;
-            font-family: 'Exo';
-            &:focus {
-                outline: none;
-            }
-        }
+.entry-amazing{
+    display:block;
+    border-color: $accent-alt;
+    border-width: 1px;
+    border-radius: 6px;
+    
+    #entryHolder{
+        display:block;
+        padding: 12px;
+        background: $accent-pri;
+        border-radius: 6px;
     }
     
-    .entry-amazing{
-        display:block;
-        border-color: $accent-alt;
-        border-width: 1px;
-        border-radius: 6px;
-        
-        #entryHolder{
-            display:block;
-            padding: 12px;
-            background: $accent-pri;
-            border-radius: 6px;
-        }
-        
-        #date{
-            display: inline-block;
-            width: 49%;
-            margin-right: 2%;
-            padding-bottom: 4px;
-            font-family: $font-uxui;
-        }
-        
-        #temp{
-            display: inline-block;
-            width: 49%;
-            padding-bottom: 4px;
-            font-family: $font-uxui;
-        }
-        
-        #content{
-            display: block;
-            width: 100%;
-            font-family: $font-uxui;
-        }
+    #date{
+        display: inline-block;
+        width: 49%;
+        margin-right: 2%;
+        padding-bottom: 4px;
+        font-family: $font-uxui;
+    }
+    
+    #temp{
+        display: inline-block;
+        width: 49%;
+        padding-bottom: 4px;
+        font-family: $font-uxui;
+    }
+    
+    #content{
+        display: block;
+        width: 100%;
+        font-family: $font-uxui;
     }
 }
 
 /* AmazingAI - Text Styling */
-h1 {
-    font-family: $font-uxui;
-    font-size: 38px;
-    line-height: 44px;
+.h1-amazing {
+    display: inline-block;
     margin-top: $padding-sm;
-    
-    .h1-amazing {
-        display: inline-block;
-        margin: 0px;
-        padding: 0px;
-        color: #000;
-        font-size: 26px;
-        line-height: 60px;
-        font-weight: 300;
-    }
+    color: #000;
+    font-family: $font-uxui;
+    font-size: 24px;
+    line-height: 42px;
+    font-weight: 300;
 }
 
-h2 {
+.h2-amazing {
+    display: block;
+    width: 100%;
+    padding: $padding-ss;
+    color: #111;
     font-family: $font-uxui;
-    font-size: 32px;
-    line-height: 36px;
-    margin-top: $padding-sm;
-    
-    .h2-amazing {
-        display: block;
-        width: 100%;
-        padding: 12px;
-        margin-top: 48px;
-        color: #111;
-        font-size: 1.2em;
-        line-height: 1em;
-        font-weight: 400;
-        text-align: center;
-    }
+    font-size: 1.2em;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: center;
+}
 
-    .h2-social {
-        width: 100%;
-        margin: 0px auto;
-        padding-top: 6px;
-        padding-bottom: 6px;
-        color: #000;
-        font-size: 18px;
-        line-height: 32px;
-        font-weight: 400;
-        text-align: center;
-        letter-spacing: -1px;
-    }
+.h2-social {
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #000;
+    font-family: $font-uxui;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: -1px;
 }
 
 a {
@@ -273,6 +244,16 @@ a {
     text-decoration: none;
     &:hover {
         color: $accent-alt;
+    }
+}
+
+.highlight {
+    padding-right: 6px;
+    padding-left: 6px;
+    background-color: $accent-pri;
+    color: #fff;
+    &:hover {
+        background-color: $accent-alt;
     }
 }
 
