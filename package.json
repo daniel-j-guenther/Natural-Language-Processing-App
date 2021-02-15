@@ -45,7 +45,7 @@
     "webpack": "4.44.2",
     "webpack-cli": "^4.5.0",
     "websocket-extensions": ">=0.1.4",
-    "yargs-parser": ">=13.1.2"
+    "yargs-parser": ">=20.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
