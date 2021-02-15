@@ -66,6 +66,6 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 
 npm install
 
-npm i chokidar@latest fsevents@latest webpack-cli @babel/core @babel/preset-env babel-loader style-loader node-sass css-loader sass-loader html-webpack-plugin@4 file-loader@4 terser-webpack-plugin@4 optimize-css-assets-webpack-plugin webpack-dev-server
+npm i fsevents@latest chokidar@latest webpack-cli @babel/core @babel/preset-env babel-loader style-loader node-sass css-loader sass-loader html-webpack-plugin@4 file-loader@4 terser-webpack-plugin@4 optimize-css-assets-webpack-plugin webpack-dev-server
 
 npm i -D clean-webpack-plugin webpack-bundle-analyzer
