@@ -61,11 +61,3 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 > npm i webpack-dev-server
 > npm i -D clean-webpack-plugin
 > npm i -D webpack-bundle-analyzer
-
-## CD/CD Installs
-
-npm install
-
-npm i fsevents@latest chokidar@latest webpack-cli @babel/core @babel/preset-env babel-loader style-loader node-sass css-loader sass-loader html-webpack-plugin@4 file-loader@4 terser-webpack-plugin@4 optimize-css-assets-webpack-plugin webpack-dev-server
-
-npm i -D clean-webpack-plugin webpack-bundle-analyzer
