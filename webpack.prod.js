@@ -1,21 +1,12 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const TerserPlugin = require("terser-webpack-plugin")
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-    entry: './src/client/index.js',
     mode: 'production',
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new TerserPlugin({}),
-            new OptimizeCssAssetsPlugin({})
-        ]
-    },
+    entry: './src/client/index.js',
     module: {
         rules: [
             {
@@ -24,9 +15,23 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
+                test: '/\.(png|ico|ttf|webmanifest)$/i',
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]'
+                }
+            },
+            {
                 test: /.s?css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             }
+        ]
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({}),
+            new OptimizeCssAssetsPlugin({})
         ]
     },
     plugins: [
@@ -34,7 +39,6 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new MiniCssExtractPlugin({filename: '[name].css'}),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.optimize\.css$/g,
             cssProcessor: require('cssnano'),

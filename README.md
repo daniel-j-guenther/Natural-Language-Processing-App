@@ -49,12 +49,15 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 
 > npm install
 
-> npm i -D @babel/core @babel/preset-env babel-loader
-> npm i -D style-loader node-sass css-loader sass-loader
+> npm i webpack-cli
+> npm i @babel/core @babel/preset-env babel-loader
+> npm i style-loader node-sass css-loader sass-loader
+> npm i html-webpack-plugin@4
+> npm i install file-loader@4
+
+> npm i terser-webpack-plugin@4
+> npm i optimize-css-assets-webpack-plugin
+
+> npm i webpack-dev-server
 > npm i -D clean-webpack-plugin
-> npm i -D html-webpack-plugin@4
-> npm i -D mini-css-extract-plugin
-> npm i -D optimize-css-assets-webpack-plugin
-> npm i -D terser-webpack-plugin@4
-> npm i -D install --save-dev webpack-bundle-analyzer
-> npm i -D install file-loader@4
+> npm i -D webpack-bundle-analyzer

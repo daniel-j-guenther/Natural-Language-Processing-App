@@ -21,19 +21,14 @@ app.use(cors());
 /* AmazingAI - App instance */
 app.use(express.static('dist'))
 
+/* AmazingAI - Localhost */
+app.listen(3072, ()=>{console.log('AmazingAI on port 3072!')})
 
 /* AmazingAI - Asynchronouse GET/POST routes */
-
-// console.log(__dirname)
-
+console.log(__dirname)
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
-})
-
-/* AmazingAI - Localhost */
-app.listen(3072, function () {
-    console.log('AmazingCodebase listening on port 3072!')
+    res.sendFile('dist/index.html')
 })
 
 app.get('/test', function (req, res) {

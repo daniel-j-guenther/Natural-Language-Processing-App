@@ -10,7 +10,9 @@ import img from './files/android-chrome-512x512.png';
 import img from './files/apple-touch-icon.png';
 import img from './files/favicon.ico';
 
-//console.log(checkForName);
+import './styles/style.scss';
+
+console.log(checkForName);
 alert("Express Server Running!")
 //console.log("");
 

@@ -1,0 +1,284 @@
+/* AmazingAI - SASS Variables */
+$accent-pri: #21ffa2;
+$accent-alt: #4138ec;
+$font-uxui: 'Poppins';
+$font-user: 'Exo';
+$padding-ss: 12px;
+$padding-sm: 24px;
+$padding-ms: 36px;
+$padding-mm: 48px;
+$padding-ls: 64px;
+$padding-lm: 72px;
+$padding-ll: 144px;
+
+/* AmazingAI - Base Styling */
+.container {
+    position: relative;
+    z-index: 1;
+    width: 860px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 12px;
+    padding-left: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {  
+    z-index: 0;
+    display: flex;
+    height: 32vh;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .highlight {
+            padding-right: 6px;
+            padding-left: 6px;
+            background-color: $accent-pri;
+            color: #fff;
+            &:hover {
+                background-color: $accent-alt;
+            }
+        }
+    }
+}
+
+main {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    padding-right: $padding-ss;
+    padding-left: $padding-ss;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e6e6;
+
+    .div-master {
+        width: 100%;
+        margin-top: -32px;
+        margin-bottom: -32px;
+        border-radius: $padding-ss;
+        background-color: #fff;
+        box-shadow: 4px 4px 12px 1px rgba(0, 0, 0, 0.15);
+    }
+}
+
+footer {
+    display: flex;
+    padding: 72px 12px 12px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    .social-amazing {
+        padding: 12px 36px;
+        font-style: normal;
+        text-align: center;
+    }
+
+    .crumbs-amazing {
+        padding: $padding-ss;
+        font-family: $font-uxui;
+        color: #111;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .footer-link {
+        color: #111;
+        text-decoration: underline;
+    }
+    
+    .social-link {
+        display: inline-block;
+        width: $padding-ls;
+        margin-top: 18px;
+        margin-bottom: $padding-sm;
+        font-family: 'Font Awesome Brands';
+        color: #000;
+        font-size: 28px;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .social-icon {
+        display: inline-block;
+        width: $padding-lm;
+        padding-top: $padding-ss;
+        padding-bottom: $padding-ss;
+        font-family: 'Font Awesome Brands';
+        color: #000;
+        font-size: 28px;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+/* AmazingAI - Component Styling */
+.app{
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
+    justify-content: center;
+    padding-top: $padding-sm;
+    padding-left: $padding-ll;
+    padding-right: $padding-ll;
+    padding-bottom: $padding-ls;
+    font-family: $font-user;
+
+    form {
+        padding: $padding-ss;
+
+        input{
+            display:block;
+            height: 48px;
+            margin-bottom: $padding-ss;
+            color: $accent-alt;
+            background-color: #e6e6e6;
+            border-width: 1px;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: $font-user;
+            &::placeholder { /* Firefox, Chrome, Opera */ 
+                color: $accent-alt;
+                font-size: 1em;
+                font-family: 'Exo';
+            } 
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+                color: $accent-alt; 
+                font-size: 1em;
+                font-family: 'Exo';
+            } 
+            &::-ms-input-placeholder { /* Microsoft Edge */ 
+                color: $accent-alt;
+                font-size: 1em;
+                font-family: 'Exo';
+            } 
+            &:focus{
+                outline: none;
+            }
+        }        
+        
+        button{
+            display: block;
+            height: 48px;
+            background: $accent-alt;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 1.44em;
+            font-family: 'Exo';
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    
+    .entry-amazing{
+        display:block;
+        border-color: $accent-alt;
+        border-width: 1px;
+        border-radius: 6px;
+        
+        #entryHolder{
+            display:block;
+            padding: 12px;
+            background: $accent-pri;
+            border-radius: 6px;
+        }
+        
+        #date{
+            display: inline-block;
+            width: 49%;
+            margin-right: 2%;
+            padding-bottom: 4px;
+            font-family: $font-uxui;
+        }
+        
+        #temp{
+            display: inline-block;
+            width: 49%;
+            padding-bottom: 4px;
+            font-family: $font-uxui;
+        }
+        
+        #content{
+            display: block;
+            width: 100%;
+            font-family: $font-uxui;
+        }
+    }
+}
+
+/* AmazingAI - Text Styling */
+h1 {
+    font-family: $font-uxui;
+    font-size: 38px;
+    line-height: 44px;
+    margin-top: $padding-sm;
+    
+    .h1-amazing {
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+        color: #000;
+        font-size: 26px;
+        line-height: 60px;
+        font-weight: 300;
+    }
+}
+
+h2 {
+    font-family: $font-uxui;
+    font-size: 32px;
+    line-height: 36px;
+    margin-top: $padding-sm;
+    
+    .h2-amazing {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin-top: 48px;
+        color: #111;
+        font-size: 1.2em;
+        line-height: 1em;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .h2-social {
+        width: 100%;
+        margin: 0px auto;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        color: #000;
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: -1px;
+    }
+}
+
+a {
+    color: #111;
+    text-decoration: none;
+    &:hover {
+        color: $accent-alt;
+    }
+}
+
+@font-face {
+    font-family: 'Font Awesome Brands';
+    src: url('/src/client/files/amazing.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
