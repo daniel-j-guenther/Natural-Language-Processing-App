@@ -47,14 +47,13 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 
 ## Install Notes
 
-> npm i -g chokidar@latest fsevents@latest
 > npm install
+> npm i chokidar@latest fsevents@latest
 
 > npm i webpack-cli
 > npm i @babel/core @babel/preset-env babel-loader
 > npm i style-loader node-sass css-loader sass-loader
-> npm i html-webpack-plugin@4
-> npm i install file-loader@4
+> npm i html-webpack-plugin@4 file-loader@4
 
 > npm i terser-webpack-plugin@4
 > npm i optimize-css-assets-webpack-plugin
@@ -62,3 +61,11 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 > npm i webpack-dev-server
 > npm i -D clean-webpack-plugin
 > npm i -D webpack-bundle-analyzer
+
+## CD/CD Installs
+
+npm install
+
+npm i chokidar@latest fsevents@latest webpack-cli @babel/core @babel/preset-env babel-loader style-loader node-sass css-loader sass-loader html-webpack-plugin@4 file-loader@4 terser-webpack-plugin@4 optimize-css-assets-webpack-plugin webpack-dev-server
+
+npm i -D clean-webpack-plugin webpack-bundle-analyzer
