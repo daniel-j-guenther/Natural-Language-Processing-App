@@ -1,22 +1,10 @@
-/* AmazingAI - App Endpoint */
-projectData = {};
-
 /* AmazingAI - Dependencies */
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 
 /* AmazingAI - App instance */
-const app = express()
-
-/* AmazingAI - Middleware */
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-
-/* AmazingAI - Cross origin allowance */
-const cors = require('cors');
-app.use(cors());  
+const app = express() 
 
 /* AmazingAI - App instance */
 app.use(express.static('dist'))

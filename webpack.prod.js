@@ -15,13 +15,6 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: '/\.(png|ico|ttf|webmanifest)$/i',
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name].[ext]'
-                }
-            },
-            {
                 test: /.s?css$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             }
