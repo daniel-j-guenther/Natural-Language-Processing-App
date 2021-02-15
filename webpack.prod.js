@@ -1,13 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     mode: 'production',
     entry: './src/client/index.js',
+    stats: 'verbose',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     module: {
         rules: [
             {
@@ -17,7 +21,7 @@ module.exports = {
             },
             {
                 test: /.s?css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             }
         ]
     },
@@ -34,6 +38,5 @@ module.exports = {
             filename: "./index.html",
         }),
         new OptimizeCssAssetsPlugin({}),
-        new MiniCssExtractPlugin({filename: '[name].css'})
     ]
 }

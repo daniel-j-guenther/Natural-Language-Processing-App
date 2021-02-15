@@ -13,12 +13,9 @@
     "url": "https://github.com/daniel-j-guenther/p4-frontend-dev-nanodegree.git"
   },
   "keywords": [
-    "Asynchronous",
-    "JavaScript",
-    "Fetch API",
+    "RESTful",
     "Webpack",
     "Workbox",
-    "Service Workers",
     "Natural language Processing"
   ],
   "author": "DJ Guenther",
@@ -41,7 +38,6 @@
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^4.2.3",
-    "file-loader": "^4.3.0",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.12"
   },
