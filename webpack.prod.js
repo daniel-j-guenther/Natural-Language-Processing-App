@@ -28,15 +28,7 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-            },
-            {
-                test: /\.(png|ico)$/,
-                type: 'assets/resource',
-            },
-            {
-                test: /\.ttf$/,
-                type: 'assets/resource',
+                use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
             }
         ]
     },

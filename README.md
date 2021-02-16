@@ -48,8 +48,11 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 ## Install Notes
 
 > npm install
-> npm i chokidar@latest webpack-cli@latest webpack-dev-server
+> npm i fsevents@latest -f --save-optional
+> npm i chokidar@latest -f --save-optional
+> npm i postcss@^8.1.0
 
+> npm i webpack-cli@latest webpack-dev-server
 > npm i @babel/core @babel/preset-env babel-loader
 > npm i style-loader node-sass css-loader sass-loader
 > npm i html-webpack-plugin@4 terser-webpack-plugin@4
