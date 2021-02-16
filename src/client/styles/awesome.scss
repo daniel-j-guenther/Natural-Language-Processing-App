@@ -1,15 +1,15 @@
 /* AmazingAI - SASS Variables */
-$accent-pri: #21ffa2;
-$accent-alt: #4138ec;
-$font-uxui: 'Poppins';
-$font-user: 'Exo';
-$padding-ss: 12px;
-$padding-sm: 24px;
-$padding-ms: 36px;
-$padding-mm: 48px;
-$padding-ls: 64px;
-$padding-lm: 72px;
-$padding-ll: 144px;
+$pri: #21ffa2;
+$alt: #4138ec;
+$user: 'Exo';
+$uxui: 'Poppins';
+$ss: 12px;
+$sm: 24px;
+$ms: 36px;
+$mm: 48px;
+$ls: 64px;
+$lm: 72px;
+$ll: 144px;
 
 /* AmazingAI - Base Styling */
 header {  
@@ -20,83 +20,52 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    nav {
+    nav{
         display: flex;
         justify-content: center;
         align-items: center;
     }
 }
 
-main {
+main{
     position: relative;
-    z-index: 0;
     display: flex;
-    padding-right: $padding-ss;
-    padding-left: $padding-ss;
+    padding-right: $ss;
+    padding-left: $ss;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #e6e6e6;
-
-    .div-master {
+    z-index: 0;
+    .div-master{
         width: 100%;
         margin-top: -32px;
         margin-bottom: -32px;
         border-radius: 12;
         background-color: #fff;
         box-shadow: 4px 4px 12px 1px rgba(0, 0, 0, 0.15);
+        z-index: 1;
     }
 }
 
-footer {
+footer{
     display: flex;
-    padding: 72px 12px 12px;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
-    .social-amazing {
-        padding: 12px 36px;
+    padding: $ss;
+    font-family: $uxui;
+    color: #111;
+    .social-amazing{
         font-style: normal;
         text-align: center;
     }
-
-    .crumbs-amazing {
-        padding: $padding-ss;
-        font-family: $font-uxui;
-        color: #111;
+    .crumbs-amazing{
         font-weight: 600;
         text-align: center;
     }
-
-    .footer-link {
-        color: #111;
+    .footer-link{
         text-decoration: underline;
-    }
-    
-    .social-link {
-        display: inline-block;
-        width: $padding-ls;
-        margin-top: 18px;
-        margin-bottom: $padding-sm;
-        font-family: 'Font Awesome Brands';
-        color: #000;
-        font-size: 28px;
-        text-align: center;
-        text-decoration: none;
-    }
-    
-    .social-icon{
-        display: inline-block;
-        width: $padding-lm;
-        padding-top: $padding-ss;
-        padding-bottom: $padding-ss;
-        font-family: 'Font Awesome Brands';
-        color: #000;
-        font-size: 28px;
-        text-align: center;
-        text-decoration: none;
     }
 }
 
@@ -119,36 +88,32 @@ footer {
     flex-direction: column;
     vertical-align: top;
     justify-content: center;
-    padding-top: $padding-mm;
-    padding-bottom: $padding-mm;
-    padding-left: $padding-ll;
-    padding-right: $padding-ll;
+    padding-top: $mm;
+    padding-bottom: $mm;
+    padding-left: $ll;
+    padding-right: $ll;
 }
 
 input{
     display:block;
     height: 48px;
-    padding: $padding-ss;
-    margin-bottom: $padding-ss;
-    color: $accent-alt;
+    padding: $ss;
+    margin-bottom: $ss;
+    color: $alt;
     background-color: #e6e6e6;
     border-width: 1px;
     border-radius: 6px;
     font-size: 1em;
-    font-family: $font-user;
-    
+    font-family: $user;  
     &::placeholder{ /* Firefox, Chrome, Opera */ 
-        color: $accent-alt;
+        color: $alt;
     } 
-    
     &:-ms-input-placeholder{ /* Internet Explorer 10-11 */ 
-        color: $accent-alt;
+        color: $alt;
     } 
-    
     &::-ms-input-placeholder{ /* Microsoft Edge */ 
-        color: $accent-alt;
+        color: $alt;
     } 
-    
     &:focus{
         outline: none;
     }
@@ -157,12 +122,12 @@ input{
 .amazing-btn{
     display: block;
     height: 48px;
-    padding: $padding-ss;
-    background: $accent-alt;
+    padding: $ss;
+    background: $alt;
     color: #fff;
     border-radius: 6px;
     font-size: 1.44em;
-    font-family: $font-user;
+    font-family: $user;
     &:focus {
         outline: none;
     }
@@ -170,41 +135,41 @@ input{
 
 .entry-amazing{
     display:block;
-    border-color: $accent-alt;
+    border-color: $alt;
     border-width: 1px;
     border-radius: 6px;
 }
 
 /* AmazingAI - Text Styling */
-.h1-amazing {
+.h1-amazing{
     display: inline-block;
-    margin-top: $padding-sm;
+    margin-top: $sm;
     color: #000;
-    font-family: $font-uxui;
+    font-family: $uxui;
     font-size: 24px;
     line-height: 42px;
     font-weight: 300;
 }
 
-.h2-amazing {
+.h2-amazing{
     display: block;
     width: 100%;
-    padding: $padding-ss;
+    padding: $ss;
     color: #111;
-    font-family: $font-uxui;
+    font-family: $uxui;
     font-size: 1.2em;
     line-height: 1em;
     font-weight: 400;
     text-align: center;
 }
 
-.h2-social {
+.h2-social{
     width: 100%;
     margin: 0px auto;
     padding-top: 6px;
     padding-bottom: 6px;
     color: #000;
-    font-family: $font-uxui;
+    font-family: $uxui;
     font-size: 18px;
     line-height: 32px;
     font-weight: 400;
@@ -212,20 +177,20 @@ input{
     letter-spacing: -1px;
 }
 
-a {
+a{
     color: #111;
     text-decoration: none;
-    &:hover {
-        color: $accent-alt;
+    &:hover{
+        color: $alt;
     }
 }
 
-.highlight {
+.highlight{
     padding-right: 6px;
     padding-left: 6px;
-    background-color: $accent-pri;
+    background-color: $pri;
     color: #fff;
-    &:hover {
-        background-color: $accent-alt;
+    &:hover{
+        background-color: $alt;
     }
 }

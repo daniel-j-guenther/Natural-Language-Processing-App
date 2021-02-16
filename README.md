@@ -53,6 +53,7 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 > npm i @babel/core @babel/preset-env babel-loader
 > npm i style-loader node-sass css-loader sass-loader
 > npm i html-webpack-plugin@4 terser-webpack-plugin@4
+> npm i mini-css-extract-plugin
 > npm i optimize-css-assets-webpack-plugin
 
 > npm i -D clean-webpack-plugin
