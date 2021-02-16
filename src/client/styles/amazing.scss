@@ -25,6 +25,15 @@ header {
         justify-content: center;
         align-items: center;
     }
+    .highlight{
+        padding-right: 6px;
+        padding-left: 6px;
+        background-color: $pri;
+        color: #fff;
+        &:hover{
+            background-color: $alt;
+        }
+    }
 }
 
 main{
@@ -56,14 +65,34 @@ footer{
     padding: $ss;
     font-family: $uxui;
     color: #111;
+    
     .social-amazing{
         font-style: normal;
         text-align: center;
     }
+    
+    .social-icon{
+        display: inline-block;
+        width: 72;
+        padding-top: 12;
+        padding-bottom: 12;
+        font-family: 'amazing-icons';
+        color: #000;
+        font-size: 1.2em;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 400;
+        font-style: normal;
+        &:hover{
+            color: #21ffa2;
+        }
+    }
+    
     .crumbs-amazing{
         font-weight: 600;
         text-align: center;
     }
+    
     .footer-link{
         text-decoration: underline;
     }
@@ -177,20 +206,10 @@ input{
     letter-spacing: -1px;
 }
 
-a{
+a {
     color: #111;
     text-decoration: none;
     &:hover{
         color: $alt;
-    }
-}
-
-.highlight{
-    padding-right: 6px;
-    padding-left: 6px;
-    background-color: $pri;
-    color: #fff;
-    &:hover{
-        background-color: $alt;
     }
 }
