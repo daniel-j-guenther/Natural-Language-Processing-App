@@ -3,7 +3,7 @@ import { handleSubmit } from './js/formHandler'
 import './styles/style.scss';
 
 //console.log(checkForName);
-alert("The Express Server is Running!")
+alert("Our Express server is running!")
 
 export {
     checkForName,

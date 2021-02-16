@@ -1,8 +1,6 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
     mode: 'production',
@@ -19,23 +17,15 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /.s?css$/,
+                test: /\.s?css$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             }
-        ]
-    },
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new TerserPlugin({}),
-            new OptimizeCssAssetsPlugin({})
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
-        }),
-        new OptimizeCssAssetsPlugin({}),
+        })
     ]
 }

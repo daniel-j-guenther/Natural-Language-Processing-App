@@ -157,6 +157,7 @@ input{
 .amazing-btn{
     display: block;
     height: 48px;
+    padding: $padding-ss;
     background: $accent-alt;
     color: #fff;
     border-radius: 6px;
@@ -172,34 +173,6 @@ input{
     border-color: $accent-alt;
     border-width: 1px;
     border-radius: 6px;
-    
-    #entryHolder{
-        display:block;
-        padding: 12px;
-        background: $accent-pri;
-        border-radius: 6px;
-    }
-    
-    #date{
-        display: inline-block;
-        width: 49%;
-        margin-right: 2%;
-        padding-bottom: 4px;
-        font-family: $font-uxui;
-    }
-    
-    #temp{
-        display: inline-block;
-        width: 49%;
-        padding-bottom: 4px;
-        font-family: $font-uxui;
-    }
-    
-    #content{
-        display: block;
-        width: 100%;
-        font-family: $font-uxui;
-    }
 }
 
 /* AmazingAI - Text Styling */
@@ -255,11 +228,4 @@ a {
     &:hover {
         background-color: $accent-alt;
     }
-}
-
-@font-face {
-    font-family: 'Font Awesome Brands';
-    src: url('/src/client/files/amazing.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
 }

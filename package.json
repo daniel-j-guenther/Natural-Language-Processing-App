@@ -1,16 +1,12 @@
 {
   "name": "amazing-codebase",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server --config webpack.dev.js --port 3072 --open "
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/daniel-j-guenther/p4-frontend-dev-nanodegree.git"
+    "build-dev": "webpack-dev-server --config webpack.dev.js --port 3072 --open"
   },
   "keywords": [
     "RESTful",
@@ -19,11 +15,7 @@
     "Natural language Processing"
   ],
   "author": "DJ Guenther",
-  "license": "SEE LICENSE IN ROOT DIRECTORY",
-  "bugs": {
-    "url": "https://github.com/daniel-j-guenther/p4-frontend-dev-nanodegree/issues"
-  },
-  "homepage": "https://github.com/daniel-j-guenther/p4-frontend-dev-nanodegree#README",
+  "license": "GNU3",
   "description": "## Overview",
   "dependencies": {
     "@babel/core": "^7.12.16",
@@ -32,7 +24,6 @@
     "chokidar": "^3.5.1",
     "css-loader": "^3.6.0",
     "express": "^4.17.1",
-    "fsevents": "^2.3.2",
     "html-webpack-plugin": "^4.5.1",
     "node-sass": "^4.14.1",
     "npm": "^7.5.4",
@@ -49,6 +40,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "optionalDependencies": {
-    
+    "fsevents": "^2.3.2"
   }
 }
