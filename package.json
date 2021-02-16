@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js",
-    "build-prod": "webpack --config webpack.prod.js --open",
+    "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server --config webpack.dev.js --port 3072 --open "
   },
   "repository": {
@@ -29,8 +29,10 @@
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "babel-loader": "^8.2.2",
+    "chokidar": "^3.5.1",
     "css-loader": "^3.6.0",
     "express": "^4.17.1",
+    "fsevents": "^2.3.2",
     "html-webpack-plugin": "^4.5.1",
     "node-sass": "^4.14.1",
     "npm": "^7.5.4",
@@ -47,7 +49,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "optionalDependencies": {
-    "chokidar": "^3.5.1",
-    "fsevents": "^2.3.2"
+    
   }
 }

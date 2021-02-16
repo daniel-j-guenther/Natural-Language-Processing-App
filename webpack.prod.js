@@ -7,7 +7,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
     mode: 'production',
     entry: './src/client/index.js',
-    stats: 'verbose',
     output: {
         libraryTarget: 'var',
         library: 'Client'
