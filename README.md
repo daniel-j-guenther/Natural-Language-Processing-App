@@ -28,7 +28,7 @@ To learn more visit Udacity's [Frontend Web Developer Nanodegree](https://www.ud
 
 ## Experiences
 
-I am most excited about the build tools and skills acquired in this nanodegree, most specifically this project. I have already plunged into TypeScript & SASS which are common requirements for web developer positions I am researching. Moreover, I have obtained a clear path to developing PWA's (Progressive Web Applications), which is my ultimate professional milestone/goal. 
+I am most excited about the build tools and skills acquired this project. I have already plunged into TypeScript & SASS which are common requirements for web developer positions I am researching. Moreover, I have obtained a clear path to developing PWA's (Progressive Web Applications), which is my ultimate professional milestone/goal. 
 
 I intend to turn this project submission into a mini PWA and impliment TypeScript, both of which are additional features (not requirements for this project) with the primary goal of showcasing my capacity to master new technologies to prospective employers and the Product Design/Scrumm/DevOps Team that should be interested in hiring me.
 
@@ -48,16 +48,12 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 ## Install Notes
 
 > npm install
-> npm i chokidar@latest fsevents@latest
+> npm i chokidar@latest webpack-cli@latest webpack-dev-server
 
-> npm i webpack-cli
 > npm i @babel/core @babel/preset-env babel-loader
 > npm i style-loader node-sass css-loader sass-loader
-> npm i html-webpack-plugin@4
-
-> npm i terser-webpack-plugin@4
+> npm i html-webpack-plugin@4 terser-webpack-plugin@4
 > npm i optimize-css-assets-webpack-plugin
 
-> npm i webpack-dev-server
 > npm i -D clean-webpack-plugin
 > npm i -D webpack-bundle-analyzer
