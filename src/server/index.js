@@ -1,7 +1,7 @@
 /* AmazingAI - Dependencies */
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./fetch-api.js')
+const runAnalysis = require('./run-analysis.js')
 
 /* AmazingAI - App instance */
 const app = express() 
@@ -24,7 +24,7 @@ app.listen(1024, function () {
 
 appData = {};
 app.get('/meaning-cloud', function (req, res) {
-    res.send(mockAPIResponse)
+    res.send(runAnalysis)
 })
 
 /* Server side POST Route: Data received from the client side POST. 

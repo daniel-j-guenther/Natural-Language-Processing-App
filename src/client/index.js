@@ -1,8 +1,11 @@
+import { runChecker } from './js/url-checker'
+import { runFeedback } from './js/run-handler'
+
+
 import './styles/amazing.scss'
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
-import icon from './styles/awesome-16x16.png'
-import icon from './styles/awesome-32x32.png'
+import './styles/amazing.ttf'
+import './styles/amazing-16x16.png'
+import './styles/amazing-32x32.png'
 
 //console.log(checkForName);
 alert("Our Express server is running!")
@@ -39,8 +42,7 @@ const updateUI = async () => {
     }
 }; */
 
-
 export {
-    checkForName,
-    handleSubmit
+    runChecker,
+    runFeedback
 }

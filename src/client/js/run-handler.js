@@ -3,7 +3,7 @@ function runFeedback(event) {
 
     // check what text was put into the form field
     let webAddress = document.getElementById('web-address').value
-    Client.checkUrl(webAddress)
+    Client.runChecker(webAddress)
 
     // console.log("::: Form Submitted :::")
     fetch('http://localhost:3072/meaning-cloud')

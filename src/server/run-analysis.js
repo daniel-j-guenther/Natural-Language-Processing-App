@@ -1,4 +1,4 @@
-/* Fetch API Components */
+/* Fetch API Components 
 const baseURL = "";
 let getForUrl = document.getElementById('');
 const apiKey = "";
@@ -14,9 +14,9 @@ meaningCloud(baseURL, getForUrl, apiKey)
 })
 .then(() => {
     updateUI();
-});
+});*/
 
-/* MeaningCloud Sentiment Analysis API Fetch Request */
+/* MeaningCloud Sentiment Analysis API Fetch Request 
 const meaningCloud = async (baseURL, getForUrl, apiKey) => {
     const res = await fetch(baseURL + getForUrl + apiKey)
     req = req.json()
@@ -27,7 +27,7 @@ try {
 } 
 catch {
     console.log("Error :", error);
-}
+}*/
 
 
 let json = {

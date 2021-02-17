@@ -31,10 +31,11 @@ module.exports = {
                 use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(png|jpe?g|gif|ico)$/i,
+                test: /\.(png|ttf)$/,
                 loader: 'file-loader',
                 options: {
-                  name: '[path][name].[ext]',
+                    outputPath: 'assets',
+                    name: '[name].[ext]'
                 },
             }
         ]

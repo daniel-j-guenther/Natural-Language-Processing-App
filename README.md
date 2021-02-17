@@ -49,12 +49,12 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
 
 > npm install
 
-These helped suppress deprecated libraires:
+  Installed to help suppress deprecated libraires:
 > npm i fsevents@latest -f --save-optional
 > npm i chokidar@latest -f --save-optional
 > npm i postcss@^8.1.0
 
-These are necessary when running Webpack 4:
+  Installed & necessary when running Webpack 4:
 > npm i webpack-cli@latest webpack-dev-server@latest
 > npm i @babel/core @babel/preset-env babel-loader
 > npm i style-loader node-sass file-loader css-loader sass-loader
@@ -62,6 +62,6 @@ These are necessary when running Webpack 4:
 > npm i mini-css-extract-plugin
 > npm i optimize-css-assets-webpack-plugin
 
-These are kept exclusively for our dev environment:
+  Installed exclusively for our dev environment:
 > npm i -D clean-webpack-plugin
 > npm i -D webpack-bundle-analyzer

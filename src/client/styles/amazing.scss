@@ -15,7 +15,7 @@ $ll: 144px;
 header {  
     z-index: 0;
     display: flex;
-    height: 32vh;
+    height: 320px;
     padding: 12px;
     flex-direction: column;
     justify-content: center;
@@ -50,6 +50,7 @@ main{
         width: 100%;
         margin-top: -32px;
         margin-bottom: -32px;
+        padding: $sm;
         border-radius: 12;
         background-color: #fff;
         box-shadow: 4px 4px 12px 1px rgba(0, 0, 0, 0.15);
@@ -65,37 +66,36 @@ footer{
     padding: $ss;
     font-family: $uxui;
     color: #111;
-    
-    .social-amazing{
-        font-style: normal;
-        text-align: center;
+    height: 288px;
+}
+
+.social-amazing{
+    font-style: normal;
+    text-align: center;
+}
+
+.social-icon{
+    display: inline-block;
+    padding: $sm;
+    color: #111;
+    font-family: 'amazing-icons';
+    font-size: 1.618em;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    &:hover{
+        color: $pri;
     }
-    
-    .social-icon{
-        display: inline-block;
-        width: 72;
-        padding-top: 12;
-        padding-bottom: 12;
-        font-family: 'amazing-icons';
-        color: #000;
-        font-size: 1.2em;
-        text-align: center;
-        text-decoration: none;
-        font-weight: 400;
-        font-style: normal;
-        &:hover{
-            color: #21ffa2;
-        }
-    }
-    
-    .crumbs-amazing{
-        font-weight: 600;
-        text-align: center;
-    }
-    
-    .footer-link{
-        text-decoration: underline;
-    }
+}
+
+.crumbs-amazing{
+    font-weight: 600;
+    text-align: center;
+}
+
+.footer-link{
+    text-decoration: underline;
 }
 
 .container{
@@ -117,7 +117,6 @@ footer{
     flex-direction: column;
     vertical-align: top;
     justify-content: center;
-    padding-top: $mm;
     padding-bottom: $mm;
     padding-left: $ll;
     padding-right: $ll;
@@ -125,8 +124,7 @@ footer{
 
 input{
     display:block;
-    height: 48px;
-    padding: $ss;
+    height: $mm;
     margin-bottom: $ss;
     color: $alt;
     background-color: #e6e6e6;
@@ -151,7 +149,7 @@ input{
 .amazing-btn{
     display: block;
     height: 48px;
-    padding: $ss;
+    padding-top: 7px;
     background: $alt;
     color: #fff;
     border-radius: 6px;
@@ -159,6 +157,9 @@ input{
     font-family: $user;
     &:focus {
         outline: none;
+    }
+    &:hover{
+        background-color: $pri;
     }
 }
 
@@ -170,6 +171,14 @@ input{
 }
 
 /* AmazingAI - Text Styling */
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@font-face {
+    font-family: 'amazing-icons';
+    src: url('./amazing.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 .h1-amazing{
     display: inline-block;
     margin-top: $sm;

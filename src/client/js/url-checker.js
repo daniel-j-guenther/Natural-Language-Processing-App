@@ -1,4 +1,4 @@
-function checkUrl(webAddress) {
+function runChecker(webAddress) {
     console.log("::: Running checkForName :::", webAddress);
     let names = [
         "Picard",
@@ -13,4 +13,4 @@ function checkUrl(webAddress) {
     }
 }
 
-export { checkUrl }
+export { runChecker }
