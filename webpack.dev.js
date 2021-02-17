@@ -1,12 +1,26 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require("terser-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     mode: 'development',
     entry: './src/client/index.js',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({}),
+            new OptimizeCssAssetsPlugin({})
+        ]
+    },
     devtool: 'source-map',
     stats: 'verbose',
     module: {
@@ -15,10 +29,18 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
-            },   
+            },
             {
                 test: /\.s?css$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|ttf)$/,
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'assets',
+                    name: '[name].[ext]'
+                },
             }
         ]
     },
@@ -26,6 +48,9 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
+        }),
+        new MiniCSSExtractPlugin ({
+            filename: '[name].css'
         }),
         new CleanWebpackPlugin({
             // Simulate the removal of files
