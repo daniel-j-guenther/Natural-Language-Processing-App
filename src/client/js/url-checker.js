@@ -1,5 +1,5 @@
 function runChecker(webAddress) {
-    console.log("::: Running checkForName :::", webAddress);
+    console.log("::: Running Sentiment Analysis :::", webAddress);
     let names = [
         "Picard",
         "Janeway",
