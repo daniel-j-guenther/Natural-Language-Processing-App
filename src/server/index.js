@@ -1,7 +1,7 @@
 /* AmazingAI - Dependencies */
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+const mockAPIResponse = require('./fetch-api.js')
 
 /* AmazingAI - App instance */
 const app = express() 
@@ -22,6 +22,25 @@ app.listen(1024, function () {
 })
 
 
-app.get('/test', function (req, res) {
+appData = {};
+app.get('/meaning-cloud', function (req, res) {
     res.send(mockAPIResponse)
 })
+
+/* Server side POST Route: Data received from the client side POST. 
+app.post('/new-entry', updateEndpoint);
+function updateEndpoint (req,res){
+    newEntry = {
+        datum: req.body.datum,
+        tempum: req.body.tempum,
+        feeling: req.body.feeling
+    };
+    projectData = newEntry;
+}; */
+
+/* Server side GET Route I: Return endpoint data to client
+app.get('/add-entry', updateUI); 
+function updateUI (req, res) {
+    res.send(projectData);
+    return projectData;
+}; */

@@ -1,5 +1,5 @@
-function checkForName(inputText) {
-    console.log("::: Running checkForName :::", inputText);
+function checkUrl(webAddress) {
+    console.log("::: Running checkForName :::", webAddress);
     let names = [
         "Picard",
         "Janeway",
@@ -8,9 +8,9 @@ function checkForName(inputText) {
         "Georgiou"
     ]
 
-    if(names.includes(inputText)) {
+    if(names.includes(webAddress)) {
         alert("Welcome, Captain!")
     }
 }
 
-export { checkForName }
+export { checkUrl }

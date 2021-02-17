@@ -55,9 +55,9 @@ These helped suppress deprecated libraires:
 > npm i postcss@^8.1.0
 
 These are necessary when running Webpack 4:
-> npm i webpack-cli@latest webpack-dev-server
+> npm i webpack-cli@latest webpack-dev-server@latest
 > npm i @babel/core @babel/preset-env babel-loader
-> npm i style-loader node-sass css-loader sass-loader
+> npm i style-loader node-sass file-loader css-loader sass-loader
 > npm i html-webpack-plugin@4 terser-webpack-plugin@4
 > npm i mini-css-extract-plugin
 > npm i optimize-css-assets-webpack-plugin

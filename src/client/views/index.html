@@ -7,7 +7,6 @@
         <meta content="AmazingCodebase // #1love #berlin #stayathome #udacity" name="description">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <!-- AmazingAI: Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/amazing-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/amazing-16x16.png">
         <!-- AmazingAI: Fonts -->
@@ -29,16 +28,16 @@
             <div class="container">
                 <div class="div-master">
                     
-                    <form class="app" onsubmit="return Client.handleSubmit(event)">
+                    <form class="app" onsubmit="return Client.runFeedback(event)">
                         
                         <!-- User Inputs -->
                         <h2 class="h2-amazing">Get <strong>AmazingAI</strong> Feedback</h2>
-                        <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter a web address here for our robots to process...">
-                        <input type="submit" class="amazing-btn" name="" value="Get AI Feedback" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                        <input id="web-address" type="url" name="web-address" value="" onblur="onBlur()" placeholder="Enter a web address here for our robots to process...">
+                        <input type="submit" class="amazing-btn" name="" value="Get AI Feedback" onclick="return Client.runFeedback(event)" onsubmit="return runFeedback(event)">
                         
                         <!-- NLP Outputs -->
                         <h2 class="h2-amazing">Your <strong>AmazingAI</strong> Results:</h2>
-                        <div id="app-feedback" class="entry-amazing"></div>
+                        <div id="nlp-feedback" class="entry-amazing"></div>
 
                     </form>
 
