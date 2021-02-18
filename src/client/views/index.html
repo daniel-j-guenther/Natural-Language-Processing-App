@@ -29,11 +29,15 @@
                         <!-- User Inputs -->
                         <h2 class="h2-amazing">Get <strong>AmazingAI</strong> Feedback</h2>
                         <input id="website-url" type="url" name="website-url" value="" placeholder="Enter a web address here for our robots to process...">
-                        <input type="submit" class="amazing-btn" name="" value="Run AI Sentiment Analysis" onclick="return Client.runHandler(event)" onsubmit="return Client.runHandler(event)">
+                        <input type="submit" class="amazing-btn" name="" value="Run AI Sentiment Analysis" onclick="return Client.runHandler(event)">
                         
                         <!-- NLP Outputs -->
                         <h2 class="h2-amazing">Latest <strong>AmazingAI</strong> Findings</h2>
-                        <div id="nlp-feedback" class="entry-amazing"></div>
+                        <div id="nlp-feedback" class="entry-amazing">
+                            <div id="nlp-subjectivity" class="feedback"></div>
+                            <div id="nlp-confidence" class="feedback"></div>
+                            <div id="nlp-agreement" class="feedback"></div>
+                        </div>
 
                     </form>
 

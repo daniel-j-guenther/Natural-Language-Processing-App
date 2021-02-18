@@ -1,33 +1,43 @@
 function runValidator(webAddress) {
     console.log("::: Validating Address :::");
     
-    // AmazingAI - Step 2: Validate and POST to App Endpoint.
-    if(!console.error()) { // this was quicker than validtating XML/HTML/RSS (I have limited resources to complete the program need be asap ap)
+    // AmazingAI - Step 2: Validate and POST to Endpoint.
+    if(!console.error()) {
         console.log("::: Validated Successfuly :::");
-        alert("Thank you, that is a valid web address!")
-        addToEndpoint('/validated', {address: webAddress})
-    } 
+        console.log(webAddress);
+        alert("Thank you, that is a valid web address!");
+        // Client side POST Request
+        runAnalysis('/validata', webAddress) // As a string
+        
+        /* URL in json format produces same < at [0]
+        runAnalysis('/validata', {
+            address: webAddress
+        })*/
+    }
     // AmazingAI - Elgantly handle any errors.
     else {
         console.log("::: Validation Failure! :::");
-        alert("Sorry this address won't work!")
+        alert("Sorry this address won't work!");
     }
 }
 
-/* AW - Async POST route adds entry to our app endpoint */
-const addToEndpoint = async (url='', data = {}) => {    
+// Client side POST Route - please help me understand why its returning that page 👀
+const runAnalysis = async (url='', data) => {    
+    console.log("webAddress before fetch(): \n\n", data);
     const response = await fetch(url, {
       method: 'POST',
       credentials: 'same-origin',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'text/plain',
       },
-      body: JSON.stringify(data),
-    });
+      body: data
+    })
     try {
-        const newData = await response.json();
-        return newData;
+        const address = await response.text();
+        console.log("webAddress after fetch(): \n\n", address);
+        return address;
     } catch (error) {
+        console.log("::: API Request Failed! :::");
         console.log("error", error);
     }
 };

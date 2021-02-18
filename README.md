@@ -67,4 +67,4 @@ Asynchronous `fetch` request: doesn’t block the client i.e. the browser remain
 > npm i -D webpack-bundle-analyzer
 
 Installed for API, Jest & Workbox functionalities:
-> npm i dotenv
+> npm i dotenv cors body-parser
