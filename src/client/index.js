@@ -1,6 +1,5 @@
-import { runChecker } from './js/url-checker'
-import { runFeedback } from './js/run-handler'
-
+import { runHandler } from './js/handler'
+import { runValidator } from './js/validator'
 
 import './styles/amazing.scss'
 import './styles/amazing.ttf'
@@ -42,7 +41,4 @@ const updateUI = async () => {
     }
 }; */
 
-export {
-    runChecker,
-    runFeedback
-}
+export { runHandler, runValidator }

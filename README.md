@@ -28,9 +28,9 @@ To learn more visit Udacity's [Frontend Web Developer Nanodegree](https://www.ud
 
 ## Experiences
 
-I am most excited about the build tools and skills acquired this project. I have already plunged into TypeScript & SASS which are common requirements for web developer positions I am researching. Moreover, I have obtained a clear path to developing PWA's (Progressive Web Applications), which is my ultimate professional milestone/goal. 
+Synchronous `http.request`: A synchronous request blocks the client until operation completes. In such case, javascript engine of the browser is blocked.
 
-I intend to turn this project submission into a mini PWA and impliment TypeScript, both of which are additional features (not requirements for this project) with the primary goal of showcasing my capacity to master new technologies to prospective employers and the Product Design/Scrumm/DevOps Team that should be interested in hiring me.
+Asynchronous `fetch` request: doesn’t block the client i.e. the browser remains responsive. At that time, user can perform another operations also. In such case, javascript engine of the browser is not blocked.
 
 ## Table of Contents
 
@@ -65,3 +65,6 @@ I intend to turn this project submission into a mini PWA and impliment TypeScrip
   Installed exclusively for our dev environment:
 > npm i -D clean-webpack-plugin
 > npm i -D webpack-bundle-analyzer
+
+Installed for API, Jest & Workbox functionalities:
+> npm i dotenv
