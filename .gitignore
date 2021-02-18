@@ -1,6 +1,6 @@
 node_modules
 dist
-
 .env
+.gitignore
 P4-INSTRUCTIONS.md
 P4-REQUIREMENTS.md
