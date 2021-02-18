@@ -24,12 +24,12 @@
             <div class="container">
                 <div class="div-master">
                     
-                    <form class="app" onsubmit="return Client.runFeedback(event)">
+                    <form class="app" onsubmit="return Client.runHandler(event)">
                         
                         <!-- User Inputs -->
                         <h2 class="h2-amazing">Get <strong>AmazingAI</strong> Feedback</h2>
-                        <input id="website-url" type="url" name="website-url" value="" onblur="onBlur()" placeholder="Enter a web address here for our robots to process...">
-                        <input type="submit" class="amazing-btn" name="" value="Run AI Sentiment Analysis" onclick="return Client.runFeedback(event)" onsubmit="return runFeedback(event)">
+                        <input id="website-url" type="url" name="website-url" value="" placeholder="Enter a web address here for our robots to process...">
+                        <input type="submit" class="amazing-btn" name="" value="Run AI Sentiment Analysis" onclick="return Client.runHandler(event)" onsubmit="return Client.runHandler(event)">
                         
                         <!-- NLP Outputs -->
                         <h2 class="h2-amazing">Latest <strong>AmazingAI</strong> Findings</h2>

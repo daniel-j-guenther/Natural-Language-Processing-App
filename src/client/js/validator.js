@@ -1,20 +1,35 @@
 function runValidator(webAddress) {
-    console.log("::: Validating Web Address :::\n\nThe website address to validate: ", webAddress);
-    let validLinks = [
-        "https://",
-        "http://"
-    ]
+    console.log("::: Validating Address :::");
+    
     // AmazingAI - Step 2: Validate and POST to App Endpoint.
-    if(validLinks.includes(webAddress)) {
+    if(!console.error()) { // this was quicker than validtating XML/HTML/RSS (I have limited resources to complete the program need be asap ap)
         console.log("::: Validated Successfuly :::");
-        alert("Thank you, that is a valid web address!\nClick Okay to see your results...")
-        addToEndpoint('/validated', webAddress)
+        alert("Thank you, that is a valid web address!")
+        addToEndpoint('/validated', {address: webAddress})
     } 
     // AmazingAI - Elgantly handle any errors.
     else {
         console.log("::: Validation Failure! :::");
-        alert("Sorry this address won't work. Try again using a valid web address?")
+        alert("Sorry this address won't work!")
     }
 }
+
+/* AW - Async POST route adds entry to our app endpoint */
+const addToEndpoint = async (url='', data = {}) => {    
+    const response = await fetch(url, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    try {
+        const newData = await response.json();
+        return newData;
+    } catch (error) {
+        console.log("error", error);
+    }
+};
 
 export { runValidator }

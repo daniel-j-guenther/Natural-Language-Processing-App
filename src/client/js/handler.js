@@ -1,7 +1,7 @@
 function runHandler(event) {
     event.preventDefault()    
     // AmazingAI - Step 1: Pass userLink to validator.js
-    let userLink = document.getElementById('website-url').value
+    let userLink = document.getElementById('website-url').value.toString()
     console.log("::: New Link Submitted :::")
     Client.runValidator(userLink)
     // AmazingAI - Step 7: Use feedback dynamically to update our UI. 
