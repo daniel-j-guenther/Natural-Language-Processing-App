@@ -33,15 +33,11 @@ app.listen(1024, function () {
     console.log('AmazingAI on port 1024!')
 })
 
-/* AmazingAI - Sentiment Analysis JSON 
-amazingFeedback = {}*/
-
 /* AmazingAI - Server side POST Route */
 app.post('/validata', (req, res) => {
     newAddress = req.body.address;
     console.log("::: Server Received Address:::");
     let apiRequest = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
-    console.log("::: Running Sentiment Analysis ::: \nAPI Request = ", apiRequest);
     apiRequest.send('./analysis.js')
 })
 
