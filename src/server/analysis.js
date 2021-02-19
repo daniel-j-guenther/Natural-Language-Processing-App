@@ -1,8 +1,9 @@
+function runAnalysis(apiCall) {
+    console.log("::: Running Sentiment Analysis ::: \nAPI Call = ", apiCall);
+    module.exports = amazingFeedback
+}
 
-runAnalysis(apiRequest)
-
-const runAnalysis = async (request) => {
-    console.log("::: Running Sentiment Analysis ::: \nAPI Request = ", request);
+const runAnalysis = async (request) => {  
     const res = await fetch(request)
     try {
         let meaningCloudData = await res.json();
@@ -11,9 +12,10 @@ const runAnalysis = async (request) => {
             confidence: meaningCloudData.confidence,
             sentiment: meaningCloudData.sentiment
         }
-        module.exports = amazingFeedback
+        return amazingFeedback
     } catch (error) {
         console.log("error: ", error);
     }
 };
 
+export { runAnalysis }

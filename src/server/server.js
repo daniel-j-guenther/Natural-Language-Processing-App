@@ -10,7 +10,7 @@ dotenv.config();
 /* AmazingAI - App instance */
 const app = express() 
 
-/* AmazingAI - Middleware*/
+/* AmazingAI - Middleware */
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -37,8 +37,8 @@ app.listen(1024, function () {
 app.post('/validata', (req, res) => {
     newAddress = req.body.address;
     console.log("::: Server Received Address:::");
-    let apiRequest = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
-    apiRequest.send('./analysis.js')
+    let apiCall = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
+    apiCall.send('./analysis.js')
 })
 
 /* AmazingAI - Server side GET Route */
