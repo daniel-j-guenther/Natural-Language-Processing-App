@@ -34,27 +34,29 @@ app.listen(1024, function () {
     console.log('AmazingAI on port 1024!')
 })
 
+/* Processed Analysis JSON */
+amazingFeedback = {}
+
 /* AmazingAI - Server side POST Route */
 app.post('/validata', (req, res) => {
     newAddress = req.body.address;
-    console.log("::: Server Received Address::: ", newAddress);
+    console.log("::: Received Web Address :::");
     let apiRequest = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
-    console.log("::: API Analysis Requested :::");
     runAnalysis(apiRequest)
-    amazingFeedback = {
-        subjectivity: meaningCloudData.subjectivity,
-        confidence: meaningCloudData.confidence,
-        sentiment: meaningCloudData.sentiment
-    }
 })
 
 const runAnalysis = async (request) => {
-    console.log("::: Running Sentiment Analysis :::\nfetching feedback from",request);
+    console.log("::: API Analysis Requested :::");
     const res = await fetch(request)
     try {
         let meaningCloudData = await res.json();
-        console.log("::: Sentiment Analysis Recieved :::");
-        return meaningCloudData
+        console.log("::: API Analysis Recieved :::");
+        let processedData = {
+            subjectivity: meaningCloudData.subjectivity.toLowerCase(),
+            confidence: meaningCloudData.confidence.toLowerCase(),
+        };
+        amazingFeedback = processedData
+        console.log("::: API Analysis Processed :::\n Our Processed Data: ",amazingFeedback);
     } catch (error) {
         console.log("error: ", error);
     }

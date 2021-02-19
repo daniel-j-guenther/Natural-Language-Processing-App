@@ -1,5 +1,5 @@
 function runValidator(webAddress) {
-    console.log("::: Validating Address :::");
+    console.log("::: Validating Web Address :::");
     
     // AmazingAI - Step : Validate and POST to Endpoint.
     if(!console.error()) {
@@ -32,7 +32,7 @@ const postData = async (url='/validata', data={}) => {
         let address = await response.json();
         return address;
     } catch (error) {
-        console.log("::: API Request Failed! :::\n", error);
+        console.log("::: API Request Failed! :::\nError details:", error);
     }
 };
 

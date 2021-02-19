@@ -169,19 +169,20 @@ input{
         background-color: $pri;
     }
 }
-
+.feedback{
+    width: 100%;
+    padding: $mm;
+    font-family: $user;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+}
 .entry-amazing{
     display:block;
-    border-color: $alt;
-    border-width: 1px;
-    border-radius: 6px;
-    .feedback{
-        display: block;
-        padding: 4px;
-        width: 100%;
-        font-family: $uxui;
-        font-size: 0.8em;
-    }
+    padding-bottom: 0px;
+    font-family: $uxui;
+    text-align: center;
+    font-size: 0.7em;
 }
 
 /* AmazingAI - Text Styling */

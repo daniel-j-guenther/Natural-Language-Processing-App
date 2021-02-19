@@ -28,9 +28,9 @@ To learn more visit Udacity's [Frontend Web Developer Nanodegree](https://www.ud
 
 ## Experiences
 
-Synchronous `http.request`: A synchronous request blocks the client until operation completes. In such case, javascript engine of the browser is blocked.
+Synchronous `http.request` blocks the client until operation completes. In such case, javascript engine of the browser is blocked.
 
-Asynchronous `fetch` request: doesn’t block the client i.e. the browser remains responsive. At that time, user can perform another operations also. In such case, javascript engine of the browser is not blocked.
+Asynchronous `fetch` request doesn’t block the client i.e. the browser remains responsive. At that time, user can perform another operations also. In such case, javascript engine of the browser is not blocked.
 
 MeaningCloud DOCS provided a synchronous request instructions, which i did not like due to the fact that it blocks the browser.
 
@@ -55,12 +55,12 @@ I had to install node-fetch in order to use fetch API in the server.js
 
 > npm install
 
-* Installed to help suppress deprecated libraires:
+Installed to help suppress deprecated libraires:
 > npm i fsevents@latest -f --save-optional
 > npm i chokidar@latest -f --save-optional
 > npm i postcss@^8.1.0
 
-* Installed & necessary when running Webpack 4:
+Installed & necessary when running Webpack 4:
 > npm i webpack-cli@latest webpack-dev-server@latest
 > npm i @babel/core @babel/preset-env babel-loader
 > npm i style-loader node-sass file-loader css-loader sass-loader
@@ -68,9 +68,9 @@ I had to install node-fetch in order to use fetch API in the server.js
 > npm i mini-css-extract-plugin
 > npm i optimize-css-assets-webpack-plugin
 
-* Installed exclusively for our dev environment:
+Installed exclusively for our dev environment:
 > npm i -D clean-webpack-plugin
 > npm i -D webpack-bundle-analyzer
 
-* Installed for API, Jest & Workbox functionalities:
+Installed for API, Jest & Workbox functionalities
 > npm i dotenv cors body-parser node-fetch

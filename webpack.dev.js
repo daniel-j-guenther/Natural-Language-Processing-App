@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
@@ -22,12 +21,15 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|ttf)$/,
                 loader: 'file-loader',
-                options: {outputPath: 'assets', name: '[name].[ext]'}
+                options: {
+                    outputPath: 'assets',
+                    name: '[name].[ext]'
+                }
             }
         ]
     },
