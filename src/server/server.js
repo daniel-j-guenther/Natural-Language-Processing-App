@@ -1,6 +1,7 @@
 /* AmazingAI - Dependencies */
 var path = require('path')
 const express = require('express')
+const amazingFeedback = require('./analysis.js')
 
 /* Amazing AI - Private Keys secured in environment variables */
 const dotenv = require('dotenv');
@@ -39,25 +40,9 @@ amazingFeedback = {}*/
 app.post('/validata', (req, res) => {
     newAddress = req.body.address;
     console.log("::: Server Received Address:::");
-    
-    runAnalysis(`https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`)
-    
-    const runAnalysis = async (apiRequest) => {
-        console.log("::: Running Sentiment Analysis :::");
-        const res = await fetch(apiRequest)
-        try {
-            let meaningCloudData = await res.json();
-            console.log("::: Received Sentiment Analysis :::");
-            amazingFeedback = {
-                subjectivity: meaningCloudData.subjectivity,
-                confidence: meaningCloudData.confidence,
-                sentiment: meaningCloudData.sentiment
-            }
-            return amazingFeedback;
-        } catch (error) {
-            console.log("error: ", error);
-        }
-    };
+    let apiRequest = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
+    console.log("::: Running Sentiment Analysis ::: \nAPI Request = ", apiRequest);
+    apiRequest.send('./analysis.js')
 })
 
 /* AmazingAI - Server side GET Route */
