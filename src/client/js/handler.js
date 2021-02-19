@@ -3,7 +3,6 @@ function runHandler(event) {
     let userLink = document.getElementById('website-url').value.toString();
     console.log("::: New Link Submitted :::");
     Client.runValidator(userLink)
-    .then(Client.runAnalysis())
     .then(updateUI());
 }
 
@@ -12,7 +11,7 @@ const updateUI = async () => {
     const req = await fetch('/analysis')
     try {
         const findings = await req.json();
-        console.log("MeaningCloud Data: ", findings);
+        console.log("::: Client Recieved Feedback :::\n", findings);
         // Dynamically update our UI with MeaningCloud Sentiment Analysis.
         document.getElementById('nlp-feedback').innerHTML = "We found some really interesting facts:\n";
         document.getElementById('nlp-subjectivity').innerHTML = "1 - The article is: " + findings.subjectivity;

@@ -1,7 +1,9 @@
+import { runAnalysis } from "../../server/analysis";
+
 function runValidator(webAddress) {
     console.log("::: Validating Address :::");
     
-    // AmazingAI - Step 2: Validate and POST to Endpoint.
+    // AmazingAI - Step : Validate and POST to Endpoint.
     if(!console.error()) {
         console.log("::: Validated Successfuly :::");
         // console.log(webAddress);
@@ -9,7 +11,8 @@ function runValidator(webAddress) {
         // Client side POST Request
         postData('/validata', {
             address: webAddress
-        });
+        })
+        .then(runAnalysis);
     }
     // AmazingAI - Elgantly handle any errors.
     else {
