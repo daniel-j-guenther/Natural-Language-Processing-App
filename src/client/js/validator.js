@@ -1,5 +1,3 @@
-import { runAnalysis } from "../../server/analysis";
-
 function runValidator(webAddress) {
     console.log("::: Validating Address :::");
     
@@ -11,8 +9,7 @@ function runValidator(webAddress) {
         // Client side POST Request
         postData('/validata', {
             address: webAddress
-        })
-        .then(runAnalysis);
+        });
     }
     // AmazingAI - Elgantly handle any errors.
     else {
@@ -22,22 +19,20 @@ function runValidator(webAddress) {
 }
 
 // Client side POST Route - please help me understand why its returning that page 👀
-const postData = async (url='/validata', data ={}) => {    
-    console.log("webAddress before fetch: \n\n", data);
+const postData = async (url='/validata', data={}) => {
     const response = await fetch(url, {
       method: 'POST',
       credentials: 'same-origin',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     });
     try {
         let address = await response.json();
-        console.log("webAddress after fetch: \n\n", address);
         return address;
     } catch (error) {
-        console.log("::: API Request Failed! ::: \n\n", error);
+        console.log("::: API Request Failed! :::\n", error);
     }
 };
 

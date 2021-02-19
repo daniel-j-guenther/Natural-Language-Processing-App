@@ -32,6 +32,12 @@ Synchronous `http.request`: A synchronous request blocks the client until operat
 
 Asynchronous `fetch` request: doesn’t block the client i.e. the browser remains responsive. At that time, user can perform another operations also. In such case, javascript engine of the browser is not blocked.
 
+MeaningCloud DOCS provided a synchronous request instructions, which i did not like due to the fact that it blocks the browser.
+
+https://stackoverflow.com/questions/48433783/referenceerror-fetch-is-not-defined 
+
+I had to install node-fetch in order to use fetch API in the server.js
+
 ## Table of Contents
 
 - p4-frontend-dev-nanodegree/src/client
@@ -49,12 +55,12 @@ Asynchronous `fetch` request: doesn’t block the client i.e. the browser remain
 
 > npm install
 
-  Installed to help suppress deprecated libraires:
+* Installed to help suppress deprecated libraires:
 > npm i fsevents@latest -f --save-optional
 > npm i chokidar@latest -f --save-optional
 > npm i postcss@^8.1.0
 
-  Installed & necessary when running Webpack 4:
+* Installed & necessary when running Webpack 4:
 > npm i webpack-cli@latest webpack-dev-server@latest
 > npm i @babel/core @babel/preset-env babel-loader
 > npm i style-loader node-sass file-loader css-loader sass-loader
@@ -62,9 +68,9 @@ Asynchronous `fetch` request: doesn’t block the client i.e. the browser remain
 > npm i mini-css-extract-plugin
 > npm i optimize-css-assets-webpack-plugin
 
-  Installed exclusively for our dev environment:
+* Installed exclusively for our dev environment:
 > npm i -D clean-webpack-plugin
 > npm i -D webpack-bundle-analyzer
 
-Installed for API, Jest & Workbox functionalities:
-> npm i dotenv cors body-parser
+* Installed for API, Jest & Workbox functionalities:
+> npm i dotenv cors body-parser node-fetch

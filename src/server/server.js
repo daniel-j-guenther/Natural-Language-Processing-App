@@ -1,9 +1,10 @@
 /* Dependencies */
 var path = require('path')
 const express = require('express')
-const amazingFeedback = require('./analysis.js')
+const fetch = require("node-fetch")
+// const amazingFeedback = require('./analysis.js')
 
-/* Private Keys secured in environment variables */
+/* Environment Variables */
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -33,33 +34,31 @@ app.listen(1024, function () {
     console.log('AmazingAI on port 1024!')
 })
 
-/* AmazingAI -  */
-amazingFeedback = {}
-
 /* AmazingAI - Server side POST Route */
 app.post('/validata', (req, res) => {
     newAddress = req.body.address;
-    console.log("::: Server Received Address:::");
-    // API request built in variable.
+    console.log("::: Server Received Address::: ", newAddress);
     let apiRequest = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
-    // Trying to pass variable into API Call
-    ()=>{runAnalysis(apiRequest)}
-    const runAnalysis = async (request) => {  
-        console.log("::: Running Sentiment Analysis ::: \nAPI Call = ", request);
-        const res = await fetch(request)
-        try {
-            let meaningCloudData = await res.json();
-            return meaningCloudData
-        } catch (error) {
-            console.log("error: ", error);
-        }
-    }
+    console.log("::: API Analysis Requested :::");
+    runAnalysis(apiRequest)
     amazingFeedback = {
         subjectivity: meaningCloudData.subjectivity,
         confidence: meaningCloudData.confidence,
         sentiment: meaningCloudData.sentiment
     }
 })
+
+const runAnalysis = async (request) => {
+    console.log("::: Running Sentiment Analysis :::\nfetching feedback from",request);
+    const res = await fetch(request)
+    try {
+        let meaningCloudData = await res.json();
+        console.log("::: Sentiment Analysis Recieved :::");
+        return meaningCloudData
+    } catch (error) {
+        console.log("error: ", error);
+    }
+}
 
 /* AmazingAI - Server side GET Route */
 app.get('/analysis', (req, res) => {
