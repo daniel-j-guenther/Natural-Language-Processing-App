@@ -1,6 +1,7 @@
 /* AmazingAI - Dependencies */
 var path = require('path')
 const express = require('express')
+const amazingFeedback = require('./analysis.js')
 
 /* Amazing AI - Private Keys secured in environment variables */
 const dotenv = require('dotenv');
@@ -32,27 +33,16 @@ app.listen(1024, function () {
     console.log('AmazingAI on port 1024!')
 })
 
-/* AmazingAI - Sentiment Analysis JSON */
-amazingFeedback = {}
+/* AmazingAI - Sentiment Analysis JSON 
+amazingFeedback = {}*/
 
 /* AmazingAI - Server side POST Route */
 app.post('/validata', (req, res) => {
     newAddress = req.body.address;
     console.log("Server side webAddress: \n\n", newAddress);
-    console.log("::: Running Sentiment Analysis :::");
-    let apiPath = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
-    console.log("Server side API request: \n\n", apiPath);
-    runAnalysis(apiPath);
-
-    const runAnalysis = async (apiPath) => {
-        const res = await fetch(apiPath)
-        try {
-            let meaningCloudData = await res.json();
-            amazingFeedback = meaningCloudData;
-        } catch (error) {
-            console.log("error: ", error);
-        }
-    };
+    let apiRequest = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
+    console.log("Server side API request: \n\n", apiRequest);
+    apiRequest.push('./analysis.js')
 })
 
 /* AmazingAI - Server side GET Route */
