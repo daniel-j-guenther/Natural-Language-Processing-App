@@ -171,15 +171,16 @@ input{
 }
 .feedback{
     width: 100%;
-    padding: $mm;
     font-family: $user;
     text-align: center;
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 0.9em;
+    color: $alt;
+    font-weight: 700;
+    line-height: 1.618em;
 }
-.entry-amazing{
+.overview{
     display:block;
-    padding-bottom: 0px;
+    padding: $ss;
     font-family: $uxui;
     text-align: center;
     font-size: 0.7em;
