@@ -44,6 +44,10 @@
                     <a href="index.html" class="footer-link">#Amazing🤪</a> webapp 
                 </div>
             </div>
-        </footer> 
+        </footer>
+        <!-- Service Workers -->
+        <script> 
+            if ('serviceWorker' in navigator) {window.addEventListener('load', () => { navigator.serviceWorker.register('/service-worker.js'); }); }
+        </script>
     </body>
 </html>

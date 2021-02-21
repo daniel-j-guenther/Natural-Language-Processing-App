@@ -42,13 +42,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new GenerateSW(),
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
         new MiniCSSExtractPlugin ({
             filename: '[name].css'
-        })
+        }),
+        new GenerateSW()
     ]
 }
