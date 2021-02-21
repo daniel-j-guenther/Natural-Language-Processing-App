@@ -1,4 +1,4 @@
-/* AmazingAI - SASS Variables */
+/* SASS Variables */
 $pri: #21ffa2;
 $alt: #4138ec;
 $user: 'Exo';
@@ -11,7 +11,7 @@ $ls: 64px;
 $lm: 72px;
 $ll: 144px;
 
-/* AmazingAI - Base Styling */
+/* Base Styling */
 header {  
     z-index: 0;
     display: flex;
@@ -35,7 +35,6 @@ header {
         }
     }
 }
-
 main{
     position: relative;
     display: flex;
@@ -57,7 +56,6 @@ main{
         z-index: 1;
     }
 }
-
 footer{
     display: flex;
     flex-direction: column;
@@ -68,12 +66,10 @@ footer{
     color: #111;
     height: 288px;
 }
-
 .social-amazing{
     font-style: normal;
     text-align: center;
 }
-
 .social-icon{
     display: inline-block;
     padding: $sm;
@@ -88,16 +84,13 @@ footer{
         color: $pri;
     }
 }
-
 .crumbs-amazing{
     font-weight: 600;
     text-align: center;
 }
-
 .footer-link{
     text-decoration: underline;
 }
-
 .container{
     display: flex;
     flex-direction: column;
@@ -116,7 +109,7 @@ footer{
     align-items: center;
 }
 
-/* AmazingAI - Component Styling */
+/* Component Styling */
 .app{
     display: flex;
     flex-direction: column;
@@ -126,7 +119,6 @@ footer{
     padding-left: $ll;
     padding-right: $ll;
 }
-
 input{
     display:block;
     height: $mm;
@@ -152,7 +144,6 @@ input{
         outline: none;
     }
 }        
-
 .amazing-btn{
     display: block;
     height: 48px;
@@ -186,7 +177,7 @@ input{
     font-size: 0.7em;
 }
 
-/* AmazingAI - Text Styling */
+/* Text Styling */
 @import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @font-face {
@@ -204,7 +195,6 @@ input{
     line-height: 42px;
     font-weight: 300;
 }
-
 .h2-amazing{
     display: block;
     width: 100%;
@@ -216,7 +206,6 @@ input{
     font-weight: 400;
     text-align: center;
 }
-
 .h2-social{
     width: 100%;
     margin: 0px auto;
@@ -230,7 +219,6 @@ input{
     text-align: center;
     letter-spacing: -1px;
 }
-
 a {
     color: #111;
     text-decoration: none;

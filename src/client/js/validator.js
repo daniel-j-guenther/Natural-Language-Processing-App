@@ -1,39 +1,29 @@
 function runValidator(webAddress) {
     console.log("::: Validating Web Address :::");
-    
-    // AmazingAI - Step : Validate and POST to Endpoint.
-    if(!console.error()) {
+    if(!console.error()) { // Validate and POST for API Call.
         console.log("::: Validated Successfuly :::");
-        // console.log(webAddress);
         alert("Thank you, that is a valid web address!");
-        // Client side POST Request
-        postData('/validata', {
-            address: webAddress
-        });
-    }
-    // AmazingAI - Elgantly handle any errors.
-    else {
+        postData('/validata', {address: webAddress}) // POST call.
+    } else { // If Validation has failed, elegantly handle errors.
         console.log("::: Validation Failure! :::");
         alert("Sorry this address won't work!");
     }
 }
 
-// Client side POST Route - please help me understand why its returning that page 👀
+/* Client side POST Route */
 const postData = async (url='/validata', data={}) => {
     const response = await fetch(url, {
       method: 'POST',
       credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
     try {
         let address = await response.json();
         return address;
     } catch (error) {
-        console.log("::: API Request Failed! :::\nError details:", error);
+        console.log("::: API Request Failed! :::\n", error);
     }
 };
 
-export { runValidator }
+export { runValidator } // Export for bundling in main.js
