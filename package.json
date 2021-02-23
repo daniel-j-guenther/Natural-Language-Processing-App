@@ -21,7 +21,7 @@
   "scripts": {
     "test": "jest",
     "start": "node src/server/server.js",
-    "build-prod": "webpack --config webpack.prod.js && npm start",
+    "build-prod": "del dist && webpack --config webpack.prod.js && npm start",
     "build-dev": "webpack serve --config webpack.dev.js --port 3072 --open"
   },
   "main": "index.js",

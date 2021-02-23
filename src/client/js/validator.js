@@ -1,6 +1,9 @@
 function runValidator(webAddress) {
     console.log("::: Validating Web Address :::");
-    if(!console.error()) { // Validate and POST for API Call.
+    // The regular expression for validating http and https
+    const regEx = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+    let regexURL = new RegExp(regEx);
+    if(webAddress.match(regexURL)) { // Validate against regX and POST for API Call.
         console.log("::: Validated Successfuly :::");
         alert("Thank you, that is a valid web address!");
         postData('/validata', {address: webAddress}) // POST call.

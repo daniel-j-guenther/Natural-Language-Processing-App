@@ -54,7 +54,10 @@ const runAnalysis = async (request) => {
         console.log("::: API Analysis Recieved :::");
         let processedData = {
             subjectivity: meaningCloudData.subjectivity.toLowerCase(),
+            irony: meaningCloudData.irony.toLowerCase(),
+            score_tag: meaningCloudData.score_tag.toLowerCase(),
             confidence: meaningCloudData.confidence.toLowerCase(),
+            agreement: meaningCloudData.agreement.toLowerCase(),
         };
         amazingFeedback = processedData;
         console.log("::: API Analysis Processed :::");
