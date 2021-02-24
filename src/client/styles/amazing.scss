@@ -9,7 +9,7 @@ $ms: 36px;
 $mm: 48px;
 $ls: 64px;
 $lm: 72px;
-$ll: 144px;
+$ll: 111px;
 
 /* Base Styling */
 header {  
@@ -115,7 +115,6 @@ footer{
     flex-direction: column;
     vertical-align: top;
     justify-content: center;
-    padding-bottom: $mm;
     padding-left: $ll;
     padding-right: $ll;
 }
@@ -148,6 +147,7 @@ input{
     display: block;
     height: 48px;
     padding-top: 7px;
+    margin-bottom: $sm;
     background: $alt;
     color: #fff;
     border-radius: 6px;
@@ -164,14 +164,12 @@ input{
     width: 100%;
     font-family: $user;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 1em;
     color: $alt;
-    font-weight: 700;
     line-height: 1.618em;
 }
 .overview{
     display:block;
-    padding: $ss;
     font-family: $uxui;
     text-align: center;
     font-size: 0.7em;

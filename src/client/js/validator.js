@@ -1,19 +1,27 @@
 function runValidator(webAddress) {
+    
     console.log("::: Validating Web Address :::");
-    // The regular expression for validating http and https
-    const regEx = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
-    let regexURL = new RegExp(regEx);
-    if(webAddress.match(regexURL)) { // Validate against regX and POST for API Call.
+    
+    // Validate with http/s/www as optional but exclude email.
+    const regexURL = /^(?:(?:http(s)?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    let regexMatchURL = new RegExp(regexURL);
+    
+    // If Validation succeeds, POST to appEndpoint.
+    if(webAddress.match(regexMatchURL)) {
         console.log("::: Validated Successfuly :::");
-        alert("Thank you, that is a valid web address!");
-        postData('/validata', {address: webAddress}) // POST call.
-    } else { // If Validation has failed, elegantly handle errors.
+        postData('/validata', {address: webAddress})
+        return "VALIDATION SUCCESS!"
+    } 
+    
+    // If Validation fails, elegantly handle errors.
+    else { 
         console.log("::: Validation Failure! :::");
-        alert("Sorry this address won't work!");
+        alert("This not a valid web address, please try again.");
+        return "VALIDATION FAILURE!"
     }
 }
 
-/* Client side POST Route */
+/* Client Side POST Route */
 const postData = async (url='/validata', data={}) => {
     const response = await fetch(url, {
       method: 'POST',
@@ -22,11 +30,12 @@ const postData = async (url='/validata', data={}) => {
       body: JSON.stringify(data)
     });
     try {
-        let address = await response.json();
-        return address;
-    } catch (error) {
+        let validURL = await response.json();
+        return validURL;
+    } 
+    catch(error){
         console.log("::: API Request Failed! :::\n", error);
     }
-};
+}
 
-export { runValidator } // Export for bundling in main.js
+export { runValidator }

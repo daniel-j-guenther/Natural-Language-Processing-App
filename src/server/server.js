@@ -17,6 +17,7 @@ app.use(bodyParser.json())
 
 /* Cross origin allowance */
 const cors = require('cors');
+const { isNumber } = require('lodash');
 app.use(cors())
 
 /* Initialize App instance */
@@ -30,36 +31,41 @@ app.get('/', function(req,res){res.sendFile('dist/index.html')})
 app.listen(1024, function(){console.log('AmazingAI on port 1024!')})
 
 /* App Endpoint */
-amazingFeedback={}
+let appEndpoint = {subjectivity: "", confidence: "", agreement: "", irony: "", score_tag: "" }
+
+/* Make available for testing */
+module.exports = appEndpoint
 
 /* Server side POST Route */
 app.post('/validata', (req, res)=>{
     newAddress = req.body.address;
     console.log("::: Received Web Address :::");
+
+    // API Request with validated URL.
     let apiRequest = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${newAddress}&lang=en&model=general`;
     runAnalysis(apiRequest)
 })
 
 /* Server side GET Route */
 app.get('/analysis', (req, res)=>{
-    res.send(amazingFeedback)
+    res.send(appEndpoint)
 })
 
 /* Fetch Request to Sentiment Analysis API */
-const runAnalysis = async (request) => {
+const runAnalysis = async (apiCall) => {
     console.log("::: API Analysis Requested :::");
-    const res = await fetch(request)
+    const res = await fetch(apiCall)
     try {
         let meaningCloudData = await res.json();
         console.log("::: API Analysis Recieved :::");
         let processedData = {
             subjectivity: meaningCloudData.subjectivity.toLowerCase(),
-            irony: meaningCloudData.irony.toLowerCase(),
-            score_tag: meaningCloudData.score_tag.toLowerCase(),
-            confidence: meaningCloudData.confidence.toLowerCase(),
+            confidence: meaningCloudData.confidence+"%",
             agreement: meaningCloudData.agreement.toLowerCase(),
+            irony: meaningCloudData.irony.toLowerCase(),
+            score_tag: meaningCloudData.score_tag,
         };
-        amazingFeedback = processedData;
+        appEndpoint = processedData;
         console.log("::: API Analysis Processed :::");
     } catch (error) {console.log("error: ", error)}
 }
