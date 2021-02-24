@@ -28,23 +28,8 @@ To learn more visit Udacity's [Frontend Web Developer Nanodegree](https://www.ud
 
 ## Experiences
 
-I learnt tons in this project! Many aspects were in fact outside of this project/lessons scope, for example, using GitHub branches and merging effectively to manage CI/CD.
+I learnt tons in this project! Many aspects were in fact outside of this project/lessons scope, for example, using GitHub branches and merging effectively to manage CI/CD. Using regular Expression for data validation. Unit Testing to test logic.
 
-Another intersting finding that surprised me is that MeaningCloud NLP (Natural Language Processing) DOCS provided a `synchronous http.request` config which blocks the browser. I did not like that idea and instead implimented an `asynchronous fetch request` that allows the browser to remain responsive so that users can continue browsing while the Sentiment Analysis API call was processing data.
+Another intersting finding that surprised me is that MeaningCloud NLP (Natural Language Processing) DOCS provided a `synchronous http.request` config which blocks the browser. I did not like that idea and instead implimented an `asynchronous fetch request` allowing the browser to remain responsive while the API call was processing data.
 
 Finally, I had to install [node-fetch](https://stackoverflow.com/questions/48433783/referenceerror-fetch-is-not-defined) in order to maintain use of fetch API in the Express Server javascript files.
-
-I really enjoy coding now becuase I am getting fluent and able to debug code efficiently myself without always relying on stackoverflow or Udacity Mentors, although that of course is often helpful & sometime necessary.
-
-## Table of Contents
-
-- p4-frontend-dev-nanodegree/src/client
-- p4-frontend-dev-nanodegree/src/server
-- p4-frontend-dev-nanodegree/.babelrc
-- p4-frontend-dev-nanodegree/.gitignore
-- p4-frontend-dev-nanodegree/package-lock.json
-- p4-frontend-dev-nanodegree/package.json
-- p4-frontend-dev-nanodegree/webpack.dev.js
-- p4-frontend-dev-nanodegree/webpack.prod.js
-- p4-frontend-dev-nanodegree/LICENSE
-- p4-frontend-dev-nanodegree/README
