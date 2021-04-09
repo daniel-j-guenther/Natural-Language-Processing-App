@@ -1,6 +1,6 @@
 # Natural Languange Proccessing App
 
-<img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Passing"> <img src="https://img.shields.io/badge/test-passing-brightgreen" alt="Test Passing"> <img src="https://img.shields.io/badge/node-14.15.5-brightgreen" alt="Node V14.15.5"> <img src="https://img.shields.io/badge/webpack-5.27.2-blue" alt="Webpack V5.27.2">
+<img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Passing"> <img src="https://img.shields.io/badge/test-passing-brightgreen" alt="Test Passing"> <img src="https://img.shields.io/badge/node-14.15.5-brightgreen" alt="Node V14.15.5"> <img src="https://img.shields.io/badge/webpack-4.46.0-blue" alt="Webpack V4.46.0">
 
 ### Udacity Nanodegree P4: Evaluate a News Article
 
